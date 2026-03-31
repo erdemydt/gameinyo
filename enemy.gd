@@ -27,6 +27,10 @@ func _physics_process(delta):
 
 func take_damage(amount):
     health -= amount
+    var sprite = $Sprite2D
+    sprite.modulate = Color(1, 1, 1, 1)  # flash white
+    var tween = create_tween()
+    tween.tween_property(sprite, "modulate", Color(1, 0, 0, 1), 0.1)  # back to red
     if health <= 0:
         if xp_gem_scene:
             var gem = xp_gem_scene.instantiate()

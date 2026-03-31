@@ -23,3 +23,6 @@ texture = ExtResource("2_kne1u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=1897541385]
 shape = SubResource("CircleShape2D_kpjcp")
+
+[node name="AttackSlash" type="Line2D" parent="." unique_id=1104153437]
+position = Vector2(20, -10)

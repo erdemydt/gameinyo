@@ -5,7 +5,7 @@ extends Node2D
 var player: CharacterBody2D
 var ui
 var spawn_timer = 0.0
-var spawn_interval = 2.0
+var spawn_interval = 0.5
 
 func _ready():
     player = $Player

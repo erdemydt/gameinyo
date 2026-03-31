@@ -2,19 +2,31 @@ extends CharacterBody2D
 
 const SPEED = 200.0
 var attack_timer = 0.0
-var attack_interval = 0.8
-var attack_damage = 10.0
+var attack_interval = 1.8
+var attack_damage = 30.0
 var xp = 0
 var xp_to_level = 50
 var level = 1
-var health = 100.0
-var max_health = 100.0
+var health = 300.0
+var max_health = 300.0
 var invincible_timer = 0.0
-var invincible_duration = 0.5  # seconds of invincibility after hit
+var invincible_duration = 0.1  # seconds of invincibility after hit
 var ui = null
-
+var slash_line: Line2D
 
 func _ready():
+    slash_line = Line2D.new()
+    slash_line.width = 3.0
+    slash_line.default_color = Color(1, 1, 1, 0.8)
+    var points = []
+    var startP = [20,10]
+    var totalPoints = 40
+    for i in range(40):
+        var angle = deg_to_rad(-45 + i * 2.5)  # 90° arc
+        points.append(Vector2(cos(angle), sin(angle)) * 60*i/totalPoints + Vector2(startP[0],startP[1]))  # 80 = visual radius
+    slash_line.points = points
+    slash_line.visible = false
+    add_child(slash_line)
     add_to_group("player")
 func _physics_process(delta: float) -> void:
     var direction = Vector2.ZERO
@@ -48,10 +60,20 @@ func attack():
     for body in bodies:
         if body.is_in_group("enemies"):
             body.take_damage(attack_damage)
-
+    slash_line.visible = true
+    slash_line.modulate = Color(1.0, 1.0, 1.0, 1.0)
+    var tween = create_tween()
+    tween.tween_property(slash_line, "rotation", slash_line.rotation + deg_to_rad(270), 0.25)
+    tween.parallel().tween_property(slash_line, "modulate:a", 0.0, 0.25)
+    tween.tween_callback(func(): slash_line.visible = false)
 func take_damage(amount):
     if invincible_timer > 0:
         return
+    var sprite = $Sprite2D
+    sprite.modulate = Color(0, .5, 1, 1)  # flash white
+    var tween = create_tween()
+    tween.tween_property(sprite, "modulate", Color(1, 1, 1, 1), 0.1)  # back to red
+    
     health -= amount
     invincible_timer = invincible_duration
     if ui:
