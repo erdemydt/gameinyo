@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cjkj6jnoj4f6t"]
 
-[ext_resource type="Script" uid="uid://nuvalot38wpo" path="res://player.gd" id="1_kpjcp"]
-[ext_resource type="Texture2D" uid="uid://0uwgn7ict307" path="res://icon.svg" id="2_kne1u"]
+[ext_resource type="Script" uid="uid://nuvalot38wpo" path="res://Scenes/Entities/player.gd" id="1_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://0uwgn7ict307" path="res://Assets/icon.svg" id="2_kne1u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e80uo"]
 radius = 23.021729

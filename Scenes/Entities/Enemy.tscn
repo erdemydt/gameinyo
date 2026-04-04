@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://d3hqrbdhyiwwf"]
 
-[ext_resource type="Script" uid="uid://s35pjxs8rchs" path="res://enemy.gd" id="1_s7bn3"]
-[ext_resource type="Texture2D" uid="uid://0uwgn7ict307" path="res://icon.svg" id="1_tt7e2"]
-[ext_resource type="PackedScene" uid="uid://hj6et6k06o4f" path="res://XPGem.tscn" id="2_2hac7"]
+[ext_resource type="Script" uid="uid://s35pjxs8rchs" path="res://Scenes/Entities/enemy.gd" id="1_s7bn3"]
+[ext_resource type="Texture2D" uid="uid://0uwgn7ict307" path="res://Assets/icon.svg" id="1_tt7e2"]
+[ext_resource type="PackedScene" uid="uid://hj6et6k06o4f" path="res://Scenes/Entities/XPGem.tscn" id="2_2hac7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s7bn3"]
 radius = 7.0

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://hj6et6k06o4f"]
 
-[ext_resource type="Script" uid="uid://cnm3cgvs5n7gg" path="res://xp_gem.gd" id="1_w652n"]
-[ext_resource type="Texture2D" uid="uid://0uwgn7ict307" path="res://icon.svg" id="1_whdev"]
+[ext_resource type="Script" uid="uid://cnm3cgvs5n7gg" path="res://Scenes/Entities/xp_gem.gd" id="1_w652n"]
+[ext_resource type="Texture2D" uid="uid://0uwgn7ict307" path="res://Assets/icon.svg" id="1_whdev"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w652n"]
 radius = 8.0
