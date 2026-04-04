@@ -2,14 +2,12 @@
 
 [ext_resource type="Script" uid="uid://cekit7jsb0t35" path="res://Scenes/Game/main.gd" id="1_y3kpf"]
 [ext_resource type="PackedScene" uid="uid://d3hqrbdhyiwwf" path="res://Scenes/Entities/Enemy.tscn" id="2_3k6gv"]
-[ext_resource type="PackedScene" uid="uid://hj6et6k06o4f" path="res://Scenes/Entities/XPGem.tscn" id="3_1q8bt"]
 [ext_resource type="PackedScene" uid="uid://cjkj6jnoj4f6t" path="res://Scenes/Entities/Player.tscn" id="4_gvja8"]
+[ext_resource type="Script" uid="uid://bb8t23fnbogov" path="res://Scenes/Game/spawner.gd" id="4_y3kpf"]
 [ext_resource type="PackedScene" uid="uid://ceh7gqayj3shp" path="res://UI/HUD.tscn" id="5_m1o7v"]
 
 [node name="Node2D" type="Node2D" unique_id=1751238332]
 script = ExtResource("1_y3kpf")
-enemy_scene = ExtResource("2_3k6gv")
-xp_gem_scene = ExtResource("3_1q8bt")
 
 [node name="Player" parent="." unique_id=398365422 instance=ExtResource("4_gvja8")]
 position = Vector2(576, 324)
@@ -19,3 +17,7 @@ position = Vector2(576, 324)
 [node name="Enemies" type="Node2D" parent="." unique_id=1674834011]
 
 [node name="UI" parent="." unique_id=941438605 instance=ExtResource("5_m1o7v")]
+
+[node name="Spawner" type="Node2D" parent="." unique_id=948704919]
+script = ExtResource("4_y3kpf")
+enemy_scene = ExtResource("2_3k6gv")
