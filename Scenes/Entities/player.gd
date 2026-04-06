@@ -7,7 +7,7 @@ var attack_damage = 30.0
 var xp = 0
 var xp_to_level = 50
 var level = 1
-var health = 300.0
+var health = 30.0
 var max_health = 300.0
 var invincible_timer = 0.0
 var invincible_duration = 0.1  # seconds of invincibility after hit
@@ -79,15 +79,15 @@ func take_damage(amount):
     if ui:
         ui.update_health(health, max_health)
     if health <= 0:
-        get_tree().quit()
+        get_tree().change_scene_to_file("res://Scenes/Game/GameOver.tscn")
 
 func collect_xp(amount):
     xp += amount
+    GameManager.add_score(amount)
     if ui:
         ui.update_xp(xp, xp_to_level)
     if xp >= xp_to_level:
         level_up()
-
 func level_up():
     level += 1
     xp = 0

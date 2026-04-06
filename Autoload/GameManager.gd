@@ -6,11 +6,14 @@ var session_time = 0.0
 var current_level = 1
 
 func reset():
-	score = 0
-	session_time = 0.0
-	current_level = 1
+    score = 0
+    session_time = 0.0
+    current_level = 1
 
 func add_score(amount):
-	score += amount
-	if score > high_score:
-		high_score = score
+    score += amount
+    if score > high_score:
+        high_score = score
+
+func update_time(delta):
+    session_time += delta
